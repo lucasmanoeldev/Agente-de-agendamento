@@ -9,7 +9,7 @@ O "Agente de Agendamento Inteligente" foi desenvolvido para otimizar e automatiz
 A arquitetura é dividida em dois componentes principais:
 
 1.  **O Agente de Conversação Principal:** Responsável por receber e interpretar as mensagens do usuário.
-2.  **O MCP (Master Control Program) de Agendamento:** Um "cérebro" de ferramentas que executa as ações práticas no Google Calendar e Google Sheets.
+2.  **O MCP (Model Context Protocol) de Agendamento:** Um "cérebro" de ferramentas que executa as ações práticas no Google Calendar e Google Sheets.
 
 ## Funcionalidades Principais
 
@@ -65,3 +65,21 @@ Este fluxo funciona como um backend de ferramentas que fica à disposição do a
   * **API de Transcrição de Áudio (Speech-to-Text).**
   * **Webhook** para integração com sistemas de terceiros.
 <img width="1445" height="623" alt="Captura de tela 2025-08-24 134823" src="https://github.com/user-attachments/assets/5c0d5e30-5515-4ba4-a5fa-c32015ae67b0" />
+
+
+## Estrutura do repositório
+
+| Arquivo | Finalidade |
+|---|---|
+| [workflows/agente-agendamento.json](workflows/agente-agendamento.json) | Workflow importável no n8n |
+| [workflows/mcp-agendamento.json](workflows/mcp-agendamento.json) | Workflow importável no n8n |
+
+## Como importar e configurar
+
+1. Baixe os arquivos JSON da pasta `workflows/`.
+2. No n8n, importe cada arquivo como um workflow.
+3. Associe suas próprias credenciais aos nós de integração.
+4. Revise IDs de planilhas, agendas, quadros, listas, endereços e URLs de webhook para o seu ambiente.
+5. Confira os gatilhos e execute um teste manual antes de ativar o workflow.
+
+Os arquivos são exportações do n8n; não há servidor Python ou frontend separado neste repositório. As credenciais devem ser configuradas no n8n. Importar um arquivo não valida as integrações externas.
